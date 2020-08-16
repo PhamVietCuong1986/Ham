@@ -33,12 +33,19 @@
 //   console.log(game());
 // khai bao ham kieu doi tuong
 // khai bao kieu moi thi JS moi thuc thi duoc
-function game() {
-    return { ten: "chuot",
-        kynang: {
-            kynang1: "nhanh",
-            kynang2: "tang hinh"
-        }
-    };
+//  function game() : any{
+//       return { ten: "chuot",
+//         kynang:{
+//             kynang1:"nhanh",
+//             kynang2:"tang hinh"
+//         }
+//     }
+// }
+// console.log(game());
+// Ham co tham so
+function tbc(x, y) {
+    var tbc = (x + y) / 2;
+    console.log("trung binh cong cua " + x + " va  " + y + " la " + tbc);
 }
-console.log(game());
+tbc(155, 100);
+tbc(10, 11);
