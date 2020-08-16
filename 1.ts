@@ -45,9 +45,15 @@
 // console.log(game());
 
 // Ham co tham so
- function tbc(x:number, y:number) : void{
-     var tbc = (x + y)/2;
-     console.log("trung binh cong cua "+x+" va  "+y+" la " + tbc);
+//  function tbc(x:number, y:number) : void{
+//      var tbc = (x + y)/2;
+//      console.log("trung binh cong cua "+x+" va  "+y+" la " + tbc);
+//  }
+//  tbc(155,100);
+//  tbc(10,11);
+
+ // anonymous funtion - ham khong ten thuong dat no la 1 cai bien
+ var z = function(x:number,y:string) : string{
+     return `chao ${y} nam nay co phai ban ${x} tuoi khong?`;
  }
- tbc(155,100);
- tbc(10,11);
+console.log(z(31, "NAM"));
