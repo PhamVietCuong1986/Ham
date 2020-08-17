@@ -164,6 +164,58 @@ ma khong can phai tao 1 instance moi
 // sat thu, ho tro, xạ thủ, pháp sư,...
 //}
 // vi du tinh ke thua
+//  class Tuong {
+//      ten:string;
+//      motatuong:string;
+//      kinang: string[];
+//      constructor(ten:string,motatuong:string,kinang:string[]) {
+//          this.ten = ten;
+//          this.motatuong = motatuong;
+//          this.kinang = kinang;
+//     }
+//     showThongTin(){
+//         var kn:string = '';// khai bao gia tri mac dinh cho bien khong thong bao loi undefined ki nang 1
+//         for (let i = 0; i < this.kinang.length; i++) {
+//             kn += this.kinang[i];
+//             kn += " / ";
+//         }
+//         return ` 
+//         ten tuong: ${this.ten},
+//         mo ta tuong: ${this.motatuong}
+//         ki nang : ${kn} 
+//         `;
+//     }
+// }
+// class satthu extends Tuong {//extend lay cac thuoc tinh va kieu cua no o class Tuong
+//     donsatthu : string;
+//     constructor (ten:string,motatuong:string,kinang:string[],donsatthu:string){
+//         super(ten,motatuong,kinang);// lay cac thuoc tinh this cua ham tuong
+//         this.donsatthu = donsatthu;
+//     }
+//     showThongTin(){
+//         var kn:string = '';// khai bao gia tri mac dinh cho bien khong thong bao loi undefined ki nang 1
+//         for (let i = 0; i < this.kinang.length; i++) {
+//             kn += this.kinang[i];
+//             kn += " / ";
+//         }
+//         return ` 
+//         ten tuong: ${this.ten},
+//         mo ta tuong: ${this.motatuong}
+//         ki nang : ${kn},
+//         Don sat thu: ${this.donsatthu} 
+//         `;
+//     }   
+// }
+// var Talon = new satthu("Talon","Sát Thủ Bóng Đêm",["Lưỡi Dao Kết Liễu",
+// "Ngoại Giao Kiểu Noxus","Ám Khí","Con Đường Thích Khách"],"Sát Thủ Vô Hình");
+// var t1 = new Tuong("Ashe","Cung Băng",["Băng Tiễn","Chú Tâm Tiễn",
+// "Lửa Hồ Li","Hôn Gió","Phi Hồ"]);
+// var t2 = new Tuong("Ahri","Hồ Li Chín Đuôi",["TMị Lực Vastaya ","Quả Cầu Ma Thuật",
+// "Tán Xạ Tiễn","Ưng Tiễn","Đại Băng Tiễn"]);
+// // console.log(t1.showThongTin());
+// // console.log(t2.showThongTin());
+// console.log(Talon.showThongTin());
+// ke thua phuong thuc ham tu class CHA bang super
 var Tuong = /** @class */ (function () {
     function Tuong(ten, motatuong, kinang) {
         this.ten = ten;
@@ -176,7 +228,8 @@ var Tuong = /** @class */ (function () {
             kn += this.kinang[i];
             kn += " / ";
         }
-        return " \n        ten tuong: " + this.ten + ",\n        mo ta tuong: " + this.motatuong + "\n        ki nang : " + kn + " \n        ";
+        var thongsotuong = " \n       ten tuong: " + this.ten + ",\n       mo ta tuong: " + this.motatuong + "\n       ki nang : " + kn + " \n       ";
+        console.log(thongsotuong);
     };
     return Tuong;
 }());
@@ -188,21 +241,18 @@ var satthu = /** @class */ (function (_super) {
         return _this;
     }
     satthu.prototype.showThongTin = function () {
-        var kn = ''; // khai bao gia tri mac dinh cho bien khong thong bao loi undefined ki nang 1
-        for (var i = 0; i < this.kinang.length; i++) {
-            kn += this.kinang[i];
-            kn += " / ";
-        }
-        return " \n        ten tuong: " + this.ten + ",\n        mo ta tuong: " + this.motatuong + "\n        ki nang : " + kn + ",\n        Don sat thu: " + this.donsatthu + " \n        ";
+        _super.prototype.showThongTin.call(this); //su dung lai phuong thuc cua Cha
+        // dinh nghia them cai cua class con
+        console.log("Don sat thu cua tuong nay la: " + this.donsatthu);
     };
     return satthu;
 }(Tuong));
-var Talon = new satthu("Talon", "Sát Thủ Bóng Đêm", ["Lưỡi Dao Kết Liễu",
-    "Ngoại Giao Kiểu Noxus", "Ám Khí", "Con Đường Thích Khách"], "Sát Thủ Vô Hình");
 var t1 = new Tuong("Ashe", "Cung Băng", ["Băng Tiễn", "Chú Tâm Tiễn",
     "Lửa Hồ Li", "Hôn Gió", "Phi Hồ"]);
 var t2 = new Tuong("Ahri", "Hồ Li Chín Đuôi", ["TMị Lực Vastaya ", "Quả Cầu Ma Thuật",
     "Tán Xạ Tiễn", "Ưng Tiễn", "Đại Băng Tiễn"]);
-// console.log(t1.showThongTin());
-// console.log(t2.showThongTin());
-console.log(Talon.showThongTin());
+var Talon = new satthu("Talon", "Sát Thủ Bóng Đêm", ["Lưỡi Dao Kết Liễu",
+    "Ngoại Giao Kiểu Noxus", "Ám Khí", "Con Đường Thích Khách"], "Sát Thủ Vô Hình");
+t1.showThongTin();
+t2.showThongTin();
+Talon.showThongTin();
