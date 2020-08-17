@@ -57,3 +57,20 @@
      return `chao ${y} nam nay co phai ban ${x} tuoi khong?`;
  }
 console.log(z(31, "NAM"));
+var g:(x:number,y:string) => string = function(x,y){
+    return `chao ${y} nam nay co phai ban ${x} tuoi khong?`;
+}
+console.log(g(11, "HOA"));
+// => gan gia tri cua ham kieu du lieu gi
+
+// HAM nhung khong co cau truc Function
+
+var h = (x:number):number =>{// ten ham function bi an
+    return x+10;
+}
+console.log(h(9));
+ 
+function tinh6(x:number):number{
+    return x+10;
+}
+console.log(tinh6(9));
