@@ -74,3 +74,43 @@ showNoidung(){
 var sp1 = new dienthoai("sam sung S8",1900,4,["do","den","trang"])
 console.log(sp1.showNoidung());
 
+//
+class congViec {
+      id : number;
+      ten : string;
+      trangthai: string;
+    
+    constructor(id:number, ten:string,trangthai:string) {
+        this.id = id;
+        this.ten = ten;
+        this.trangthai = trangthai;
+    }
+    thongTin(){
+        return ` cong viec ${this.id} - ${this.ten} - trang thai: ${this.trangthai}`;
+    }
+}
+let cv1 = new congViec(1, "hoc HTML", "Dang hoc");
+console.log(cv1.thongTin());
+
+// Ket hop class va enum
+enum state{
+    Create = 10,
+    Processing,
+    Finish
+}
+class congViec {
+    id : number;
+    ten : string;
+    trangthai: state;
+  
+  constructor(id:number, ten:string,trangthai:state) {
+      this.id = id;
+      this.ten = ten;
+      this.trangthai = trangthai;
+  }
+  thongTin(){
+      return ` cong viec ${this.id} - ${this.ten} - trang thai: ${this.trangthai}`;
+  }
+}
+let cv1 = new congViec(1, "hoc HTML", state.Create);
+console.log(cv1.thongTin());
