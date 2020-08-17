@@ -123,33 +123,100 @@ giup ta su dung thuoc tinh, phuong thuc cua 1 class
 ma khong can phai tao 1 instance moi
 */
 
-enum state{
-    Create = 10,
-    Processing,
-    Finish
-}
-class congViec {
-    static id : number =11;
-   static ten : string = "viec so 11";
-    trangthai: state;
+// enum state{
+//     Create = 10,
+//     Processing,
+//     Finish
+// }
+// class congViec {
+//     static id : number =11;
+//    static ten : string = "viec so 11";
+//     trangthai: state;
   
-  constructor(id:number, ten:string,trangthai:state) {
-      this.id = id;
-      this.ten = ten;
-      this.trangthai = trangthai;
-  }
-  thongTin(){
-      return ` cong viec ${this.id} - ${this.ten} - trang thai: ${this.trangthai}`;
-  }
-  static kiemthustatic(){
-      return `kiem tra truy nhap ham static vao phuong thuc - ham method`;
-  }
+//   constructor(id:number, ten:string,trangthai:state) {
+//       this.id = id;
+//       this.ten = ten;
+//       this.trangthai = trangthai;
+//   }
+//   thongTin(){
+//       return ` cong viec ${this.id} - ${this.ten} - trang thai: ${this.trangthai}`;
+//   }
+//   static kiemthustatic(){
+//       return `kiem tra truy nhap ham static vao phuong thuc - ham method`;
+//   }
+// }
+// // khoi tao 1 doi tuong tu class (instance) 
+// let cv1 = new congViec(1, "hoc HTML", state.Create);
+// console.log(cv1.thongTin());
+// // Static khong can tao instance ma van co the truy cap duoc
+// // thuoc tinh va phuong thuc cua 1 class
+// console.log(congViec.id);
+// console.log(congViec.ten);
+// console.log(congViec.kiemthustatic());
+
+/* III. TÍNH KẾ THỪA
++ kế thừa các thuộc tính, phương thức của class bố
++ 
+*/
+//https://lienminh.garena.vn/game-info/champions
+// phần tìm kiếm tướng có các lớp kế thừa của lớp class Tướng {
+// sat thu, ho tro, xạ thủ, pháp sư,...
+//}
+// vi du tinh ke thua
+ class Tuong {
+     ten:string;
+     motatuong:string;
+     kinang: string[];
+
+     constructor(ten:string,motatuong:string,kinang:string[]) {
+         this.ten = ten;
+         this.motatuong = motatuong;
+         this.kinang = kinang;
+    }
+    showThongTin(){
+        var kn:string = '';// khai bao gia tri mac dinh cho bien khong thong bao loi undefined ki nang 1
+        for (let i = 0; i < this.kinang.length; i++) {
+            kn += this.kinang[i];
+            kn += " / ";
+            
+        }
+        return ` 
+        ten tuong: ${this.ten},
+        mo ta tuong: ${this.motatuong}
+        ki nang : ${kn} 
+        `;
+    }
 }
-// khoi tao 1 doi tuong tu class (instance) 
-let cv1 = new congViec(1, "hoc HTML", state.Create);
-console.log(cv1.thongTin());
-// Static khong can tao instance ma van co the truy cap duoc
-// thuoc tinh va phuong thuc cua 1 class
-console.log(congViec.id);
-console.log(congViec.ten);
-console.log(congViec.kiemthustatic());
+class satthu extends Tuong {//extend lay cac thuoc tinh va kieu cua no o class Tuong
+    donsatthu : string;
+    constructor (ten:string,motatuong:string,kinang:string[],donsatthu:string){
+        super(ten,motatuong,kinang);// lay cac thuoc tinh this cua ham tuong
+        this.donsatthu = donsatthu;
+    }
+    showThongTin(){
+        var kn:string = '';// khai bao gia tri mac dinh cho bien khong thong bao loi undefined ki nang 1
+        for (let i = 0; i < this.kinang.length; i++) {
+            kn += this.kinang[i];
+            kn += " / ";
+            
+        }
+        return ` 
+        ten tuong: ${this.ten},
+        mo ta tuong: ${this.motatuong}
+        ki nang : ${kn},
+        Don sat thu: ${this.donsatthu} 
+        `;
+    }   
+}
+
+var Talon = new satthu("Talon","Sát Thủ Bóng Đêm",["Lưỡi Dao Kết Liễu",
+"Ngoại Giao Kiểu Noxus","Ám Khí","Con Đường Thích Khách"],"Sát Thủ Vô Hình");
+
+var t1 = new Tuong("Ashe","Cung Băng",["Băng Tiễn","Chú Tâm Tiễn",
+"Lửa Hồ Li","Hôn Gió","Phi Hồ"]);
+var t2 = new Tuong("Ahri","Hồ Li Chín Đuôi",["TMị Lực Vastaya ","Quả Cầu Ma Thuật",
+"Tán Xạ Tiễn","Ưng Tiễn","Đại Băng Tiễn"]);
+
+// console.log(t1.showThongTin());
+// console.log(t2.showThongTin());
+console.log(Talon.showThongTin());
