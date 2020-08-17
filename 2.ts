@@ -24,5 +24,29 @@ thiết kế class (interface  dành cho property - thuộc tính
 4. Tính đóng gói (accessmodifier , statis)
 là tính chất cho phép hay không người dùng hay đối tượng khác thay đổi
 dữ liệu của đối tượng hiện tại
+*/
 
-
+// vi du class
+// contructor la ham void
+class nhan_vat_game{
+ ten_nhan_vat:string;
+ slogan:string;
+ mau :number;
+// constructor tao ra instance
+ constructor(ten_nhan_vat:string ,slogan :string, mau: number){
+     this.ten_nhan_vat = ten_nhan_vat;
+     this.slogan = slogan;
+     this.mau = mau;
+ }
+ chay(){}
+ chem(){}
+ hienthiten(){
+     return `Nhân vật: ${this.ten_nhan_vat}, 
+     slogan: ${this.slogan} , 
+     chỉ số máu là: ${this.mau}`;
+ }
+}
+var nhanvat1 = new nhan_vat_game("Akali", "Sát Thủ Đơn Độc",635);
+var nhanvat2 = new nhan_vat_game("Azir", "Hoàng Đế Sa Mac",644);
+console.log(nhanvat1.hienthiten());
+console.log(nhanvat2.hienthiten());
