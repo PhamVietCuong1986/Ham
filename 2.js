@@ -256,3 +256,7 @@ var Talon = new satthu("Talon", "Sát Thủ Bóng Đêm", ["Lưỡi Dao Kết Li
 t1.showThongTin();
 t2.showThongTin();
 Talon.showThongTin();
+/* IV. ACCESS MODIFIER
+Hoc su dung 3 tu khoa PUBLIC, PRIVATE, PROTECTED
+Dat quyen truy cap cho tung phan tu, tung thuoc tinh, tung phuong thuc ham
+*/
