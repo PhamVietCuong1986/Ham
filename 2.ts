@@ -28,79 +28,109 @@ dữ liệu của đối tượng hiện tại
 
 // vi du class
 // contructor la ham void
-class nhan_vat_game{
- ten_nhan_vat:string;
- slogan:string;
- mau :number;
-// constructor tao ra instance
- constructor(ten_nhan_vat:string ,slogan :string, mau: number){
-     this.ten_nhan_vat = ten_nhan_vat;
-     this.slogan = slogan;
-     this.mau = mau;
- }
- chay(){}
- chem(){}
- hienthiten(){
-     return `Nhân vật: ${this.ten_nhan_vat}, 
-     slogan: ${this.slogan} , 
-     chỉ số máu là: ${this.mau}`;
- }
-}
-var nhanvat1 = new nhan_vat_game("Akali", "Sát Thủ Đơn Độc",635);
-var nhanvat2 = new nhan_vat_game("Azir", "Hoàng Đế Sa Mac",644);
+// class nhan_vat_game{
+//  ten_nhan_vat:string;
+//  slogan:string;
+//  mau :number;
+// // constructor tao ra instance
+//  constructor(ten_nhan_vat:string ,slogan :string, mau: number){
+//      this.ten_nhan_vat = ten_nhan_vat;
+//      this.slogan = slogan;
+//      this.mau = mau;
+//  }
+//  chay(){}
+//  chem(){}
+//  hienthiten(){
+//      return `Nhân vật: ${this.ten_nhan_vat}, 
+//      slogan: ${this.slogan} , 
+//      chỉ số máu là: ${this.mau}`;
+//  }
+// }
+// var nhanvat1 = new nhan_vat_game("Akali", "Sát Thủ Đơn Độc",635);
+// var nhanvat2 = new nhan_vat_game("Azir", "Hoàng Đế Sa Mac",644);
 
-// class Dien thoai
+// // class Dien thoai
 
-class dienthoai{
-    ten:string;
-    gia:number;
-    sao:number;
-    mausac:string[];
+// class dienthoai{
+//     ten:string;
+//     gia:number;
+//     sao:number;
+//     mausac:string[];
 
-    constructor(ten:string, gia:number, sao:number,mausac:string[]){
-    this.ten = ten;
-    this.gia = gia;
-    this.sao = sao;
-    this.mausac = mausac
-}
-showNoidung(){
-    return `San pham: ${this.ten}, 
-    gia la: ${this.gia},
-    danh gia: ${this.sao} sao
-    voi ${this.mausac.length} mau noi bat:
-    ${this.mausac[0]}, ${this.mausac[1]}, ${this.mausac[2]} `;
-}
-}
-var sp1 = new dienthoai("sam sung S8",1900,4,["do","den","trang"])
-console.log(sp1.showNoidung());
+//     constructor(ten:string, gia:number, sao:number,mausac:string[]){
+//     this.ten = ten;
+//     this.gia = gia;
+//     this.sao = sao;
+//     this.mausac = mausac
+// }
+// showNoidung(){
+//     return `San pham: ${this.ten}, 
+//     gia la: ${this.gia},
+//     danh gia: ${this.sao} sao
+//     voi ${this.mausac.length} mau noi bat:
+//     ${this.mausac[0]}, ${this.mausac[1]}, ${this.mausac[2]} `;
+// }
+// }
+// var sp1 = new dienthoai("sam sung S8",1900,4,["do","den","trang"])
+// console.log(sp1.showNoidung());
 
-//
-class congViec {
-      id : number;
-      ten : string;
-      trangthai: string;
+// //
+// class congViec {
+//       id : number;
+//       ten : string;
+//       trangthai: string;
     
-    constructor(id:number, ten:string,trangthai:string) {
-        this.id = id;
-        this.ten = ten;
-        this.trangthai = trangthai;
-    }
-    thongTin(){
-        return ` cong viec ${this.id} - ${this.ten} - trang thai: ${this.trangthai}`;
-    }
-}
-let cv1 = new congViec(1, "hoc HTML", "Dang hoc");
-console.log(cv1.thongTin());
+//     constructor(id:number, ten:string,trangthai:string) {
+//         this.id = id;
+//         this.ten = ten;
+//         this.trangthai = trangthai;
+//     }
+//     thongTin(){
+//         return ` cong viec ${this.id} - ${this.ten} - trang thai: ${this.trangthai}`;
+//     }
+// }
+// let cv1 = new congViec(1, "hoc HTML", "Dang hoc");
+// console.log(cv1.thongTin());
 
-// Ket hop class va enum
+// // Ket hop class va enum
+// enum state{
+//     Create = 10,
+//     Processing,
+//     Finish
+// }
+// class congViec {
+//     id : number;
+//     ten : string;
+//     trangthai: state;
+  
+//   constructor(id:number, ten:string,trangthai:state) {
+//       this.id = id;
+//       this.ten = ten;
+//       this.trangthai = trangthai;
+//   }
+//   thongTin(){
+//       return ` cong viec ${this.id} - ${this.ten} - trang thai: ${this.trangthai}`;
+//   }
+// }
+// let cv1 = new congViec(1, "hoc HTML", state.Create);
+// console.log(cv1.thongTin());
+
+/*II. Y NGHIA CUA static trong lap trinh huong doi tuong
+Giup nguoi lap trinh phan quyen truy xuat
+Static truy nhap vao 1 gia tri (property)
+Static truy nhap vao 1 phuong thuc (ham method)
+giup ta su dung thuoc tinh, phuong thuc cua 1 class
+ma khong can phai tao 1 instance moi
+*/
+
 enum state{
     Create = 10,
     Processing,
     Finish
 }
 class congViec {
-    id : number;
-    ten : string;
+    static id : number =11;
+   static ten : string = "viec so 11";
     trangthai: state;
   
   constructor(id:number, ten:string,trangthai:state) {
@@ -111,6 +141,15 @@ class congViec {
   thongTin(){
       return ` cong viec ${this.id} - ${this.ten} - trang thai: ${this.trangthai}`;
   }
+  static kiemthustatic(){
+      return `kiem tra truy nhap ham static vao phuong thuc - ham method`;
+  }
 }
+// khoi tao 1 doi tuong tu class (instance) 
 let cv1 = new congViec(1, "hoc HTML", state.Create);
 console.log(cv1.thongTin());
+// Static khong can tao instance ma van co the truy cap duoc
+// thuoc tinh va phuong thuc cua 1 class
+console.log(congViec.id);
+console.log(congViec.ten);
+console.log(congViec.kiemthustatic());
