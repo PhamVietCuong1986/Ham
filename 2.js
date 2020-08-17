@@ -43,5 +43,18 @@ var nhan_vat_game = /** @class */ (function () {
 }());
 var nhanvat1 = new nhan_vat_game("Akali", "Sát Thủ Đơn Độc", 635);
 var nhanvat2 = new nhan_vat_game("Azir", "Hoàng Đế Sa Mac", 644);
-console.log(nhanvat1.hienthiten());
-console.log(nhanvat2.hienthiten());
+// class Dien thoai
+var dienthoai = /** @class */ (function () {
+    function dienthoai(ten, gia, sao, mausac) {
+        this.ten = ten;
+        this.gia = gia;
+        this.sao = sao;
+        this.mausac = mausac;
+    }
+    dienthoai.prototype.showNoidung = function () {
+        return "San pham: " + this.ten + ", \n    gia la: " + this.gia + ",\n    danh gia: " + this.sao + " sao\n    voi " + this.mausac.length + " mau noi bat:\n    " + this.mausac[0] + ", " + this.mausac[1] + ", " + this.mausac[2] + " ";
+    };
+    return dienthoai;
+}());
+var sp1 = new dienthoai("sam sung S8", 1900, 4, ["do", "den", "trang"]);
+console.log(sp1.showNoidung());

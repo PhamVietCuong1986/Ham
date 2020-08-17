@@ -48,5 +48,29 @@ class nhan_vat_game{
 }
 var nhanvat1 = new nhan_vat_game("Akali", "Sát Thủ Đơn Độc",635);
 var nhanvat2 = new nhan_vat_game("Azir", "Hoàng Đế Sa Mac",644);
-console.log(nhanvat1.hienthiten());
-console.log(nhanvat2.hienthiten());
+
+// class Dien thoai
+
+class dienthoai{
+    ten:string;
+    gia:number;
+    sao:number;
+    mausac:string[];
+
+    constructor(ten:string, gia:number, sao:number,mausac:string[]){
+    this.ten = ten;
+    this.gia = gia;
+    this.sao = sao;
+    this.mausac = mausac
+}
+showNoidung(){
+    return `San pham: ${this.ten}, 
+    gia la: ${this.gia},
+    danh gia: ${this.sao} sao
+    voi ${this.mausac.length} mau noi bat:
+    ${this.mausac[0]}, ${this.mausac[1]}, ${this.mausac[2]} `;
+}
+}
+var sp1 = new dienthoai("sam sung S8",1900,4,["do","den","trang"])
+console.log(sp1.showNoidung());
+
