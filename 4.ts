@@ -13,23 +13,57 @@
 // console.log("Ten tuong la: " + zenus.ten);
 
 // su dung accessor
-class Tuong {
+// class Tuong {
+//     private _ten : string;
+//     constructor(_ten:string) {
+//         this._ten = _ten;
+//     }
+    
+//     public get ten() : string {
+//         //tao mat khau
+//         // tao 1 so ham dieu kien
+//         return  this._ten;
+//     }
+    
+//     public set ten(v : string) {
+//         // them 1 so ham dieu kien
+//         this._ten = v;
+//     }
+    
+    
+// }
+// var zenus = new Tuong("zenus");// lay gia tri thong qua ham get tra lai gia tri
+// console.log("Ten tuong la: " + zenus.ten);
+// zenus.ten = "Than zenus";// lay gia tri thong qua ham set dat lai gia tri
+// console.log("Ten tuong la: " + zenus.ten);
+
+// su dung get, set de cai dat mat khau
+
+ var matkhau : string = "Anh Viet cho so";
+ class Nguoi {
     private _ten : string;
-    constructor(_ten:string) {
-        this._ten = _ten;
-    }
     
     public get ten() : string {
-        return  this._ten;
+        if(matkhau == "Anh Viet cho so"){
+            return this._ten;
+        }
+        else{
+            return " sai mat khau roi nhe";
+        }
     }
     
     public set ten(v : string) {
-        this._ten = v;
+        if(matkhau == "Anh Viet cho so"){
+            this._ten = v;
+        }
+        else{
+            this._ten = "Sai mat khau";
+        }
+        
     }
     
-    
-}
-var zenus = new Tuong("zenus");// lay gia tri thong qua ham get tra lai gia tri
-console.log("Ten tuong la: " + zenus.ten);
-zenus.ten = "Than zenus";// lay gia tri thong qua ham set dat lai gia tri
-console.log("Ten tuong la: " + zenus.ten);
+ }
+ var Nguoiso1 = new Nguoi();
+ matkhau = "Anh Viet cho so";
+ Nguoiso1.ten = "Viet ND";//set
+ console.log(Nguoiso1.ten);
