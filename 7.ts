@@ -54,3 +54,19 @@ class Tuong implements dacDiemTuong {
         console.log("huy diet");
     };
 }
+
+// spacename, export
+// Module la tap hop gom nhom cac class, no la dang hop dong kin
+//Muon lay ra ngoai phai dung tu khoa export truoc class
+module Adroid {
+    export class String {
+
+    }
+    export class Number {
+
+    }
+
+}
+
+var coca = new Adroid.String();
+var pepsi = new Adroid.Number();

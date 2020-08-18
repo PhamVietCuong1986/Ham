@@ -22,3 +22,23 @@ var Tuong = /** @class */ (function () {
     ;
     return Tuong;
 }());
+// spacename, export
+// Module la tap hop gom nhom cac class, no la dang hop dong kin
+//Muon lay ra ngoai phai dung tu khoa export truoc class
+var Adroid;
+(function (Adroid) {
+    var String = /** @class */ (function () {
+        function String() {
+        }
+        return String;
+    }());
+    Adroid.String = String;
+    var Number = /** @class */ (function () {
+        function Number() {
+        }
+        return Number;
+    }());
+    Adroid.Number = Number;
+})(Adroid || (Adroid = {}));
+var coca = new Adroid.String();
+var pepsi = new Adroid.Number();
