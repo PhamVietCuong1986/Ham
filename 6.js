@@ -55,6 +55,7 @@
 // //Khong khai bao ham Xem() khac kieu void
 // console.log(op1.xem());
 // CLASS generic
+// Là class có khả năng truyền các kiểu dữ liệu cho các đối số bên trong class
 var OpDienThoai = /** @class */ (function () {
     function OpDienThoai(id, ten, gia) {
         this.id = id;

@@ -64,7 +64,7 @@
 // console.log(op1.xem());
 
 // CLASS generic
-
+// Là class có khả năng truyền các kiểu dữ liệu cho các đối số bên trong class
 class OpDienThoai<x,y,z> {
     id :x;
     ten : y;
