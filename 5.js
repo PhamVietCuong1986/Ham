@@ -17,12 +17,6 @@ var __extends = (this && this.__extends) || (function () {
 var dienThoai = /** @class */ (function () {
     function dienThoai() {
     }
-    dienThoai.prototype.guiTinNhan = function () {
-        console.log("Gui tin nhan");
-    };
-    dienThoai.prototype.goiDien = function () {
-        console.log(" Goi dien thoai");
-    };
     return dienThoai;
 }());
 // Muốn sử dung được khai báo 1 class kế thừa mô hình mẫu của ABSTRACT
@@ -31,8 +25,14 @@ var androi = /** @class */ (function (_super) {
     function androi() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
+    androi.prototype.guiTinNhan = function () {
+        console.log("Gui tin nhắn");
+    };
+    androi.prototype.goiDien = function () {
+        return "Gọi điện thoại trong adroid";
+    };
     return androi;
 }(dienThoai));
 var samSung = new androi();
-samSung.goiDien();
+console.log(samSung.goiDien());
 samSung.guiTinNhan();

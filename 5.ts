@@ -5,19 +5,22 @@
  abstract  class dienThoai {
     ten : string;
     
-    public guiTinNhan(){
-        console.log("Gui tin nhan");
-    }
-    public goiDien(){
-        console.log(" Goi dien thoai");
-    }
+    abstract guiTinNhan(): void;
+    abstract goiDien():string;
 }
 
 // Muốn sử dung được khai báo 1 class kế thừa mô hình mẫu của ABSTRACT
 class androi extends dienThoai{
+  guiTinNhan(){
+      console.log("Gui tin nhắn");
+  }
+  goiDien(){
+      return "Gọi điện thoại trong adroid";
+  }
+
 
 }
 
 var samSung = new androi();
-samSung.goiDien();
+console.log( samSung.goiDien());
 samSung.guiTinNhan();
